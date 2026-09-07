@@ -1,0 +1,20 @@
+<?php
+
+namespace App\View\Components;
+
+use Illuminate\View\Component;
+
+class ImpersonationBanner extends Component
+{
+    
+    public function __construct()
+    {
+
+    }
+
+    
+    public function render()
+    {
+        return view('components.impersonation-banner');
+    }
+}

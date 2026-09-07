@@ -1,0 +1,36 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-DMtsbQuC.css",
+    "name": "app",
+    "names": [
+      "app.css"
+    ],
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/css/filament.css": {
+    "file": "assets/filament-Dw8Zn6vi.css",
+    "name": "filament",
+    "names": [
+      "filament.css"
+    ],
+    "src": "resources/css/filament.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-Vu8S-RYp.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "resources/js/components/location-picker.js",
+      "resources/js/components/location-picker.js"
+    ]
+  },
+  "resources/js/components/location-picker.js": {
+    "file": "assets/location-picker-C06w_p0_.js",
+    "name": "location-picker",
+    "src": "resources/js/components/location-picker.js",
+    "isEntry": true
+  }
+}

@@ -1,0 +1,22 @@
+/vendor
+/node_modules
+.env
+.env.*
+/storage/*.key
+/public/storage
+/.vscode
+/.idea
+
+# Ignore zip files
+*.zip
+etaxi.zip
+storage/logs/laravel.log
+db_check.txt
+/storage
+storage/logs/laravel.log
+e-Taxi-Documentation.docx
+storage/logs/laravel.log
+storage/logs/laravel.log
+storage/framework/cache/data/85/5f/855f92484c8c414d36c1b25cb24876e30229cbbf
+/storage/framework/cache
+/storage/framework/sessions

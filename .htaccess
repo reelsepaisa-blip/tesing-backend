@@ -1,0 +1,31 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirect all requests to public directory
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteCond %{REQUEST_URI} !^/storage/
+    RewriteCond %{REQUEST_URI} !^/vendor/
+    RewriteCond %{REQUEST_URI} !^/\.well-known/
+    RewriteRule ^(.*)$ /public/$1 [L,QSA]
+</IfModule>
+
+# Add CORS headers for storage files to fix Filament FileUpload metadata fetching
+<IfModule mod_headers.c>
+    # Allow both main domain and parked domain
+    SetEnvIf Origin "^https?://(etaxi\.wrteam\.me|e-taxi-live\.netsofters\.com)$" AccessControlAllowOrigin=$0
+    Header always set Access-Control-Allow-Origin %{AccessControlAllowOrigin}e env=AccessControlAllowOrigin
+    Header always set Access-Control-Allow-Origin "*" env=!AccessControlAllowOrigin
+
+    # CORS headers for all storage files
+    <LocationMatch "^/storage/">
+        Header always set Access-Control-Allow-Methods "GET, HEAD, OPTIONS"
+        Header always set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+        Header always set Access-Control-Max-Age "3600"
+    </LocationMatch>    # Handle preflight OPTIONS requests
+    <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteCond %{REQUEST_METHOD} OPTIONS
+        RewriteCond %{REQUEST_URI} ^/storage/
+        RewriteRule ^(.*)$ $1 [R=200,L]
+    </IfModule>
+</IfModule>
