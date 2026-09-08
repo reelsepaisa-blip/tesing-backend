@@ -20,7 +20,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Permissions</th>
-                                    <th>Actions</th>
+                                    <th>Actions</th> 
                                 </tr>
                             </thead>
                             <tbody>
