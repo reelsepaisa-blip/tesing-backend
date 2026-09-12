@@ -63,7 +63,7 @@
             window.googleMapsScriptLoading.loading = true;
             const script = document.createElement('script');
             script.dataset.googleMapsLoader = 'true';
-            script.src = 'https://maps.googleapis.com/maps/api/js?key={{ $googleMapsKey }}&libraries=places,drawing,geometry';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key={{ $googleMapsKey }}&libraries=places,drawing,geometry&v=3.64';
             script.async = true;
             script.defer = true;
 
@@ -92,8 +92,8 @@
                         console.error('Google Maps script loaded but API is not available. Check API key restrictions.');
                         window.dispatchEvent(new CustomEvent('googleMapsError', {
                             detail: { message: 'Google Maps API not available after script load' }
-                        }));
-                    }
+                      }));
+                  }
                 }, 100);
             };
 
